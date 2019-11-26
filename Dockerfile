@@ -6,8 +6,8 @@ COPY --from=0 /usr/bin/composer /usr/bin/composer
 
 # Install requried packages 
 RUN apt-key adv --keyserver keyserver.ubuntu.com --recv-keys AA8E81B4331F7F50
-RUN apt-get update -y &&  apt-get install -y zip unzip vim libpng-dev libxml2-dev php5-apcu php5-mysql
-RUN docker-php-ext-install mbstring gd xml
+RUN apt-get update -y &&  apt-get install -y zip unzip vim libpng-dev libxml2-dev php5-apcu php5-mysql git
+RUN docker-php-ext-install mbstring gd xml 
 RUN cp /usr/lib/php5/20131226/apcu.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
 RUN cp /usr/lib/php5/20131226/pdo.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
 RUN cp /usr/lib/php5/20131226/mysql.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
