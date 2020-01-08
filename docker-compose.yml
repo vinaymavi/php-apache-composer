@@ -1,0 +1,23 @@
+version: '3.5'
+
+networks: 
+  welcome:
+    name: welcome
+
+services:
+  
+  # Routier Web Application
+  welcome:
+    image: welcome
+    build:
+      context: .
+    volumes:
+      - ./index.php:/var/www/welcome/index.php
+      
+    networks:
+      - welcome
+    environment:
+      #Global 
+      LOCALE: en
+    ports:
+      - 9000:80

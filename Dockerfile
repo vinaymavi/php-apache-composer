@@ -16,7 +16,12 @@ RUN cp /usr/lib/php5/20131226/pdo.so /usr/local/lib/php/extensions/no-debug-non-
 RUN cp /usr/lib/php5/20131226/mysql.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
 RUN cp /usr/lib/php5/20131226/pdo_mysql.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
 RUN cp /usr/lib/php5/20131226/mysqli.so /usr/local/lib/php/extensions/no-debug-non-zts-20131226/
+COPY vhost.conf /etc/apache2/sites-enabled/welcome.conf
 
 # Copy php.ini file
 WORKDIR /usr/local/etc/php
 COPY php.ini .
+# Copy site
+WORKDIR /var/www/welcome
+COPY index.php . 
+
