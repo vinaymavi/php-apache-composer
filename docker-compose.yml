@@ -13,7 +13,7 @@ services:
       context: .
     volumes:
       - ./index.php:/var/www/welcome/index.php
-      
+      - /etc/ssl/:/etc/ssl/
     networks:
       - welcome
     environment:
