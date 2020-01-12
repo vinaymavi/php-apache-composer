@@ -3,7 +3,7 @@ name: Https Image
 on:
   push:
     branches:
-      - master
+      - https
 
 jobs:
   build:
