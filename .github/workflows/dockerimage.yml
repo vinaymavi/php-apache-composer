@@ -13,7 +13,7 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag vinaymavi/php-apache-composer:latest
     - name: Publish to Registry
-      uses: elgohr/Publish-Docker-Github-Action@master
+      uses: elgohr/Publish-Docker-Github-Action@v5
       with:
         name: vinaymavi/php-apache-composer
         username: ${{ secrets.DOCKER_USERNAME }}
